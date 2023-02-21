@@ -1,0 +1,46 @@
+@use 'breakpoints' as *;
+
+@mixin breakpoint($size) {
+  @media screen and (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media screen and (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
+
+@mixin on-hover-focus-fine($duration: 200ms, $timing: ease, $delay: 0ms, $properties) {
+  @include pointer-fine {
+    @include on-hover-focus($duration, $timing, $delay, $properties) {
+      @content;
+    }
+  }
+}
+
+@mixin on-hover-focus($duration: 200ms, $timing: ease, $delay: 0ms, $properties: none) {
+  $config: $duration $timing $delay;
+  $transitions: none;
+
+  @each $property in $properties {
+    @if $transitions == none {
+      $transitions: $property $config;
+    } @else {
+      $transitions: $transitions, $property $config;
+    }
+  }
+
+  transition: $transitions;
+
+  &:is(:hover, :focus-visible) {
+    @content;
+  }
+}
+
+@mixin pointer-fine {
+  @media (pointer: fine) {
+    @content;
+  }
+}

@@ -1,0 +1,26 @@
+:root {
+  --orange-6: hsl(26, 100%, 55%);
+  --orange-1: hsl(25, 100%, 94%);
+  --blue-9: hsl(220, 13%, 13%);
+  --blue-6: hsl(219, 9%, 45%);
+  --blue-3: hsl(220, 14%, 75%);
+  --blue-0: hsl(223, 64%, 98%);
+  --white: hsl(0, 0%, 100%);
+  --black-opacity-75: hsl(0, 0%, 0%, 0.75);
+}
+
+.clr-blue-9 {
+  color: var(--blue-9);
+}
+
+.clr-blue-6 {
+  color: var(--blue-6);
+}
+
+.clr-blue-3 {
+  color: var(--blue-3);
+}
+
+.clr-orange-6 {
+  color: var(--orange-6);
+}

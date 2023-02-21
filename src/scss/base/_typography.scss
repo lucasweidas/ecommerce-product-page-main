@@ -1,0 +1,53 @@
+@use '../abstracts/' as *;
+
+:root {
+  --font-kumbh-sans: 'Kumbh Sans', sans-serif;
+  --font-size-base: #{rem(15)};
+
+  @include breakpoint(medium) {
+    --font-size-base: #{rem(16)};
+  }
+}
+
+body {
+  font-family: var(--font-kumbh-sans);
+  font-size: var(--font-size-base);
+}
+
+.heading-1 {
+  font-size: rem(28);
+  color: var(--blue-9);
+  line-height: 1.2;
+
+  @include breakpoint(medium) {
+    font-size: rem(44);
+  }
+}
+
+.fs-sm {
+  font-size: rem(14);
+}
+
+.fs-lg {
+  font-size: rem(28);
+}
+
+.w-700 {
+  font-weight: 700;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.lh-md {
+  line-height: 1.6;
+}
+
+.ls-xsm {
+  letter-spacing: em(1.4);
+}

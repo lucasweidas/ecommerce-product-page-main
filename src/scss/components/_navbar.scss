@@ -1,0 +1,26 @@
+@use '../abstracts/' as *;
+
+.nav {
+  position: relative;
+}
+
+.nav__container {
+  --nav-margin-inline: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: rem(10);
+  padding-block: 1.5rem;
+  margin-inline: var(--nav-margin-inline);
+
+  @include breakpoint-down(xsmall) {
+    --nav-margin-inline: 1rem;
+  }
+
+  @include breakpoint(large) {
+    --nav-margin-inline: 2rem;
+    gap: rem(54);
+    padding-block: 0;
+    border-block-end: 1px solid var(--blue-3);
+  }
+}

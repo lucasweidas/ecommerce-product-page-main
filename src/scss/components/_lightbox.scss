@@ -1,0 +1,28 @@
+@use '../abstracts/' as *;
+
+.lightbox {
+  place-items: center;
+  position: fixed;
+  inset: 0;
+  z-index: var(--lightbox-z-index);
+}
+
+.lightbox__container {
+  width: 550px;
+  display: grid;
+  place-items: center;
+}
+
+.gallery__main--lightbox {
+  margin-block-start: rem(24);
+}
+
+.gallery__controller--lightbox {
+  --button-controller-size: 56px;
+  width: calc(100% + var(--button-controller-size));
+  padding-inline: 0;
+}
+
+.gallery__thumbnails--lightbox {
+  margin-block-start: rem(40);
+}

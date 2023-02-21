@@ -1,0 +1,84 @@
+@use '../abstracts/' as *;
+
+.cart {
+  position: relative;
+}
+
+.basket {
+  width: min(100vw - 16px, 360px);
+  position: absolute;
+  top: 58px;
+  right: -66px;
+  z-index: var(--cart-z-index);
+  background-color: var(--white);
+  border-radius: 0.5rem;
+
+  @include breakpoint-down(xsmall) {
+    right: -53px;
+  }
+
+  @include breakpoint(medium) {
+    top: 66px;
+    right: -49px;
+  }
+
+  @include breakpoint(large) {
+    top: 60px;
+    right: -100px;
+    box-shadow: 0 10px 25px -14px rgba(0, 0, 0, 0.8);
+  }
+
+  @include breakpoint(xlarge) {
+    right: -169px;
+  }
+}
+
+.basket__wrapper {
+  padding: rem(22);
+
+  &:nth-child(2) {
+    min-height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-block-start: 1px solid var(--blue-3);
+  }
+}
+
+.basket__items,
+.basket__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: rem(22);
+}
+
+.basket__item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .basket__thumbnail {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+  }
+
+  .item__wrapper {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .text-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+}
+
+.hide-text-overflow {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

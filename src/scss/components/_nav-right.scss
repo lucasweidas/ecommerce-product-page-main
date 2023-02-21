@@ -1,0 +1,15 @@
+@use '../abstracts/' as *;
+
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: rem(22);
+
+  @include breakpoint-down(xsmall) {
+    gap: rem(16);
+  }
+
+  @include breakpoint(large) {
+    gap: rem(44);
+  }
+}
