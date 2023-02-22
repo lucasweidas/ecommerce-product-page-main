@@ -18,7 +18,7 @@ export default function LargeImage({ src, alt, direction }) {
 const transition = { duration: 0.3, ease: 'easeOut' };
 const exit = {
   position: 'absolute',
-  transform: 'scale(0.7)',
+  scale: 0.7,
   transition: { duration: 0.3, ease: 'easeIn' },
 };
 
@@ -46,10 +46,10 @@ const toLeft = {
 
 const scale = {
   hidden: {
-    transform: 'scale(0.7)',
+    scale: 0.7,
   },
   visible: {
-    transform: 'scale(1)',
+    scale: 1,
     transition: transition,
   },
   exit: exit,
