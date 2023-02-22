@@ -9,21 +9,22 @@ export default function ProductProvider({ children }) {
   const [product, setProduct] = useState(initialProduct);
 
   useEffect(() => {
-    let ignore = false;
+    const controller = new AbortController();
 
     (async function fetchProduct() {
       try {
-        const response = await fetch('/data/products.json');
+        const response = await fetch('/data/products.json', { signal: controller.signal });
         const result = await response.json();
-        if (ignore) return;
         setProduct(result.find(item => item.id === PRODUCT_ID));
         setLocalStorageProducts(result);
       } catch (e) {
-        console.error(`Can't fetch product: ${e}`);
+        console.error(`${e}`);
       }
     })();
 
-    return () => void (ignore = true);
+    return () => {
+      controller.abort();
+    };
   }, []);
 
   return <ProductContext.Provider value={product}>{children}</ProductContext.Provider>;
