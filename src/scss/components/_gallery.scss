@@ -26,16 +26,21 @@
 }
 
 .image__container {
+  --image-radius: 0;
   width: 100%;
   position: relative;
   overflow: hidden;
   aspect-ratio: 1/1;
+  isolation: isolate;
+  border-radius: var(--image-radius);
+
+  @include breakpoint(medium) {
+    --image-radius: 1rem;
+  }
 }
 
 .image__large {
-  @include breakpoint(medium) {
-    border-radius: 1rem;
-  }
+  border-radius: var(--image-radius);
 
   @include breakpoint(large) {
     .gallery:not(.lightbox) & {

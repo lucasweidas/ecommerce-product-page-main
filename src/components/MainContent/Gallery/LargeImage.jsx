@@ -18,6 +18,8 @@ export default function LargeImage({ src, alt, direction }) {
 const transition = { duration: 0.3, ease: 'easeOut' };
 const exit = {
   position: 'absolute',
+  inset: 0,
+  zIndex: -1,
   scale: 0.7,
   transition: { duration: 0.3, ease: 'easeIn' },
 };
