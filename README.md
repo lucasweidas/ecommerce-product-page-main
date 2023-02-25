@@ -24,7 +24,7 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
 ### Links
 
 - Solution URL: [github.com/lucasweidas/ecommerce-product-page-main](https://github.com/lucasweidas/ecommerce-product-page-main)
-- Live Site URL: [lucasweidas.github.io/ecommerce-product-page-main/](https://lucasweidas.github.io/ecommerce-product-page-main/)
+- Live Site URL: [ecommerce-product-page-main](https://ecommerce-product-page-main-indol.vercel.app/)
 
 ## My process
 
